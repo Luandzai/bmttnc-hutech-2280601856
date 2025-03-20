@@ -55,8 +55,8 @@ def rsa_verify_signature():
     signature = bytes.fromhex(signature_hex)
     is_verified = rsa_cipher.verify(message, signature, public_key)
     return jsonify({'is_verified': is_verified})
-#Add this before main function
-#ECC CIPHER ALGORITHM
+# Add this before main function
+# ECC CIPHER ALGORITHM
 ecc_cipher = ECCCipher()
 @app.route('/api/ecc/generate_keys', methods=['GET'])
 def ecc_generate_keys():
