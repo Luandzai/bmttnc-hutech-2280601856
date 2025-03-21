@@ -34,6 +34,8 @@ class PlayFairCipher:
                 pair += "X"
             row1, col1 = self.find_letter_coords(matrix, pair[0])
             row2, col2 = self.find_letter_coords(matrix, pair[1])
+            if row1 is None or row2 is None or col1 is None or col2 is None:
+                continue  # Skip pairs with invalid coordinates
             if row1 == row2:
                 encrypted_text += matrix[row1][(col1 + 1) % 5] + matrix[row2][(col2 + 1) % 5]
             elif col1 == col2:
@@ -50,6 +52,8 @@ class PlayFairCipher:
             pair = cipher_text[i:i+2]
             row1, col1 = self.find_letter_coords(matrix, pair[0])
             row2, col2 = self.find_letter_coords(matrix, pair[1])
+            if row1 is None or row2 is None or col1 is None or col2 is None:
+                continue  # Skip pairs with invalid coordinates
             if row1 == row2:
                 decrypted_text += matrix[row1][(col1 - 1) % 5] + matrix[row2][(col2 - 1) % 5]
             elif col1 == col2:

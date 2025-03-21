@@ -1,14 +1,16 @@
 class TranspositionCipher:
-    def _init__(self):
+    def __init__(self):  # Corrected constructor method
         pass
+
     def encrypt(self, text, key):
         encrypted_text = ""
         for col in range(key):
             pointer = col
             while pointer < len(text):
-                encrypted_text += text [pointer]
+                encrypted_text += text[pointer]
                 pointer += key
         return encrypted_text
+
     def decrypt(self, text, key):
         decrypted_text = [''] * key
         row, col = 0, 0
@@ -19,4 +21,3 @@ class TranspositionCipher:
                 col = 0
                 row += 1
         return ''.join(decrypted_text)
-        
