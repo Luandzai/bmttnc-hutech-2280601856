@@ -5,6 +5,9 @@ def calculate_md5(input_string):
     md5_hash.update(input_string.encode('utf-8'))
     return md5_hash.hexdigest()
 
+def md5_ui(message):
+    return calculate_md5(message)
+
 input_string = input("Nhập chuỗi cần băm: ")
 md5_hash = calculate_md5(input_string)
 

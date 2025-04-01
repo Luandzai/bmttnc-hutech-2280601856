@@ -5,6 +5,9 @@ def blake2(message):
     blake2_hash.update(message)
     return blake2_hash.digest()
 
+def blake2_ui(message):
+    return blake2(message.encode('utf-8')).hex()
+
 def main():
     text = input("Nhập chuỗi văn bản: ").encode('utf-8')
     hashed_text = blake2(text)

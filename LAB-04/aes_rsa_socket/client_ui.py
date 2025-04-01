@@ -1,3 +1,5 @@
+#Chạy server.py trước rồi chạy client_ui.py, không chạy client.py
+
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QTextEdit, QLineEdit, QPushButton, QVBoxLayout, QWidget
 import threading
@@ -34,7 +36,7 @@ class ChatClient(QMainWindow):
 
     def initSocket(self):
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.client_socket.connect(('localhost', 12348))
+        self.client_socket.connect(('localhost', 12349))
 
         self.client_key = RSA.generate(2048)
         self.server_public_key = RSA.import_key(self.client_socket.recv(2048))

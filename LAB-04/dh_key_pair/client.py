@@ -22,7 +22,8 @@ def main():
 
     shared_secret = derive_shared_secret(private_key, server_public_key)
 
-    print("Shared Secret:", shared_secret.hex())
+    return shared_secret.hex()
 
 if __name__ == "__main__":
-    main()
+    shared_secret = main()
+    print("Shared Secret:", shared_secret)
